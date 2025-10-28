@@ -1,0 +1,80 @@
+use("techstore")
+//Eliminacion de la colección productos
+db.productos.drop();
+//Inserción de varios datos juntos con insertMany
+db.productos.insertMany([
+    {
+        "nombre": "Samsung A20",
+        "sku": "S001",
+        "precio": 250.00,
+        "stock": 20,
+        "tipo_producto": "Smartphone",
+        "fecha_creacion": new Date(),
+        "especificaciones": {
+            "pantalla": "6.2\"",
+            "ram_gb": 8,
+            "almacenamiento_gb": 256
+        }
+    },
+    {
+        "nombre": "Laptop ACER",
+        "sku": "L001",
+        "precio": 680.00,
+        "stock": 40,
+        "tipo_producto": "Laptop",
+        "fecha_creacion": "2025-10-28",
+        "especificaciones": {
+            "cpu": "Core i7",
+            "ram_gb": 16,
+            "almacenamiento_gb": 512,
+            "dimensiones": {
+                "alto_cm": 2.5,
+                "ancho_cm": 35,
+            }
+        }
+    },
+    {
+        "nombre": "Monitor LG",
+        "sku": "M003",
+        "precio": 350.00,
+        "stock": 20,
+        "tipo_producto": "Monitor",
+        "fecha_creacion": new Date(),
+        "especificaciones": {
+            "resolucion": "4K",
+            "tasa_refresco": "240Hz"
+        }
+    }
+]);
+//LECTURA DE DATOS
+// Consulta 1: Mostrar todos los productos en la colección. (find())
+db.productos.find({});
+// Consulta 2: Mostrar solo los productos que sean de tipo "Laptop".
+db.productos.find({ "tipo_producto": "Laptop" });
+// Consulta 3: Mostrar productos con más de 10 unidades en stock Y precio menor a 1000.
+db.productos.find({
+    "stock": { $gt: 10 },
+    "precio": { $lt: 1000 }
+});
+// Consulta 4: Mostrar solo el nombre, precio y stock de los "Smartphone" (Proyección).
+db.productos.find(
+    { "tipo_producto": "Smartphone" },
+    { "nombre": 1, "precio": 1, "stock": 1, "_id": 0 }
+);
+//ACTUALIZACIÓN DE DATOS
+//Operación 1: Se vendió un Smartphone (busque uno por su sku). Reduzca su stock en 1 unidad. (Use $inc).
+db.productos.updateOne(
+    { "sku": "S001" },
+    { $inc: { "stock": -1 } }
+);
+
+// Operación 2: Subida de precio de la Laptop y añadir campo ultima_revision. (Use $set).
+db.productos.updateOne(
+    { "tipo_producto": "Laptop" }, // Criterio de búsqueda (Laptop)
+    {
+        $set: {
+            "precio": 1650.00, // Nuevo valor
+            "ultima_revision": new Date() // Nuevo campo para establecer la ultima versión
+        }
+    }
+);
