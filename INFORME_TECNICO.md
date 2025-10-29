@@ -18,7 +18,8 @@ Se realizó una comparativa entre las soluciones que ofrece un modelo relacional
 
 Se desarrolló el modelo entidad relación con el uso de la herramienta LucidChart en donde se indica la solución de un modelo relacional para el inventario “TechStore”
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.001.png)
+![](/images/diagrama.png)  
+
 
 ||||
 | :- | :- | :- |
@@ -136,33 +137,25 @@ Primero se creó el archivo operaciones.mongodb
 
 Nos conectamos a la base de datos
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.002.png)
+![](./images/archivo.png)  
 
 Se borró la colección productos al inicio para que el script pueda volverse a ejecutar sin problemas
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.003.png)
+![](./images/borrarCol.png)  
 
 **Inserción de Datos (Create)**
 
 Posterior a ello se realizó una inserción con el uso de insertMany()
 
-![ref1]
+![](./images/insertMany.png).  
 
 **Lectura de datos**
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.005.png)
+![](./images/read.png)  
 
 **Actualización de datos**
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.006.png)
-
-
-
-
-
-
-
-
+![](./images/update.png)  
 
 
 
@@ -170,35 +163,35 @@ Posterior a ello se realizó una inserción con el uso de insertMany()
 
 **Inserción de datos**
 
-![ref2]
+![](./images/exeCreate.png)  
 
 **Lectura de datos**
 
 Consulta 1: Mostrar todos los productos en la colección. (find())
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.008.png)
+![](./images/exeRead.png)  
 
 Consulta 2: Mostrar solo los productos que sean de tipo "Laptop".
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.009.png)
+![](./images/exeRead2.png)  
 
 Consulta 3: Mostrar los productos que tengan más de 10 unidades en stock Y un precio menor a 1000.
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.010.png)
+![](./images/exeRead3.png)  
 
 Consulta 4: Mostrar solo el nombre, precio y stock de los "Smartphone" (Proyección).
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.011.png)
+![](./images/exeRead4.png)  
 
 **Actualización de datos**
 
 Operación 1: Se vendió un Smartphone (busque uno por su sku). Reduzca su stock en 1 unidad. (Use $inc).
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.012.png)
+![](./images/exeUpdate.png)  
 
 Operación 2: El precio de la Laptop ha subido. Actualice su precio a un nuevo valor y añada un nuevo campo ultima\_revision: new Date(). (Use $set).
 
-![](Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.013.png)
+![](./images/exeUpdatePrice.png)  
 
 
 
@@ -224,6 +217,3 @@ Uno de los principales problemas puede ser la integridad y seguridad de los dato
 **Pregunta 4: ¿Qué paso técnico recomendaría a continuación para "profesionalizar" esta base de datos? (Piense en rendimiento e integridad de datos que no cubrimos en este laboratorio)**
 
 Sería factible realizar configuraciones de campos requeridos o tipos de datos específicos, además de establecer límites como cantidades máximas de caracteres o rangos numéricos, para evitar que los datos almacenados presenten inconsistencias o fallos.
-
-[ref1]: Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.004.png
-[ref2]: Aspose.Words.521aa210-e81f-4c01-9285-ac32cd0f8379.007.png
