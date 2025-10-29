@@ -1,1 +1,6 @@
-# lab-unidad1-mongodb
+# lab-unidad1-mongodb  
+### Nombre: Edith Chuico  
+### Curso: Modelado Avanzado de Bases de datos  
+** Resumen de lo elaborado **
+En el presente laboratorio, se desarrolló y justificó un análisis acerca de la migración y el despliegue de un sistema de gestión de inventario para la empresa TechStore. Esto con el objetivo de reconocer las ventajas de una base de datos no estructural, como lo es MongoDB, frente a una base de datos estructural. Cabe recalcar que dichas ventajas no benefician a todo tipo de bases de datos, ya que su uso radica en el manejo de datos con esquemas flexibles y escalabilidad horizontal, mientras que el modelo relacional ofrece otras ventajas como la gran consistencia y estructura. Se realizaron diseños de un modelo relacional y un modelo NoSQL, en donde se demuestra la flexibilidad del esquema y la facilidad de su uso.  
+Posterior a ello, se realizó una fase de manipulación e implementación, en donde se preparó un archivo que contiene los comandos utilizados para las etapas CRUD posteriormente completadas. Continuamente se realizaron modificaciones e implementaciones en las colecciones y sus documentos, además de comandos de lectura para distintos tipos de consulta, corroborando la facilidad de visualización de datos, a diferencia de las bases de datos estructurales, en donde se requieren JOINs complejos y extensos.
